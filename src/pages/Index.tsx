@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
 import { Button } from '@/components/ui/button';
-import { Waves, Ticket, Monitor, FolderKanban, ArrowRight } from 'lucide-react';
+import { Waves, Ticket, Monitor, FolderKanban, ArrowRight, Camera, Laptop, ShoppingCart, Phone, Mail } from 'lucide-react';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -32,10 +32,15 @@ const Index = () => {
           <Waves className="h-8 w-8 text-primary" />
           <span className="text-2xl font-bold">BytWave Technologies</span>
         </div>
-        <Button onClick={() => navigate('/auth')}>
-          Sign In
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
+        <div className="flex gap-4">
+          <Button variant="ghost" onClick={() => navigate('/contact')}>
+            Contact
+          </Button>
+          <Button onClick={() => navigate('/auth')}>
+            Sign In
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
       </header>
 
       <main className="container mx-auto flex-1 px-4">
@@ -57,33 +62,69 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="grid gap-8 py-20 md:grid-cols-3">
-          <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card border border-border">
-            <div className="mb-4 rounded-full bg-primary/10 p-4">
-              <Ticket className="h-8 w-8 text-primary" />
+        <div className="py-20">
+          <h2 className="mb-12 text-center text-3xl font-bold">Management Features</h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card border border-border">
+              <div className="mb-4 rounded-full bg-primary/10 p-4">
+                <Ticket className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold">Ticket Management</h3>
+              <p className="text-muted-foreground">
+                Track and resolve support tickets efficiently with priority-based workflows
+              </p>
             </div>
-            <h3 className="mb-2 text-xl font-bold">Ticket Management</h3>
-            <p className="text-muted-foreground">
-              Track and resolve support tickets efficiently with priority-based workflows
-            </p>
+            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card border border-border">
+              <div className="mb-4 rounded-full bg-primary/10 p-4">
+                <Monitor className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold">Device Inventory</h3>
+              <p className="text-muted-foreground">
+                Manage your hardware assets with detailed tracking and status monitoring
+              </p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card border border-border">
+              <div className="mb-4 rounded-full bg-primary/10 p-4">
+                <FolderKanban className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold">Project Tracking</h3>
+              <p className="text-muted-foreground">
+                Organize and monitor projects from planning to completion
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card border border-border">
-            <div className="mb-4 rounded-full bg-primary/10 p-4">
-              <Monitor className="h-8 w-8 text-primary" />
+        </div>
+
+        <div className="py-20">
+          <h2 className="mb-12 text-center text-3xl font-bold">Our Services</h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card border border-border">
+              <div className="mb-4 rounded-full bg-primary/10 p-4">
+                <Camera className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold">CCTV Installation</h3>
+              <p className="text-muted-foreground">
+                Professional surveillance systems installation and maintenance for enhanced security
+              </p>
             </div>
-            <h3 className="mb-2 text-xl font-bold">Device Inventory</h3>
-            <p className="text-muted-foreground">
-              Manage your hardware assets with detailed tracking and status monitoring
-            </p>
-          </div>
-          <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card border border-border">
-            <div className="mb-4 rounded-full bg-primary/10 p-4">
-              <FolderKanban className="h-8 w-8 text-primary" />
+            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card border border-border">
+              <div className="mb-4 rounded-full bg-primary/10 p-4">
+                <Laptop className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold">Computer Supply & Management</h3>
+              <p className="text-muted-foreground">
+                Complete IT hardware solutions with procurement, setup, and ongoing management
+              </p>
             </div>
-            <h3 className="mb-2 text-xl font-bold">Project Tracking</h3>
-            <p className="text-muted-foreground">
-              Organize and monitor projects from planning to completion
-            </p>
+            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card border border-border">
+              <div className="mb-4 rounded-full bg-primary/10 p-4">
+                <ShoppingCart className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold">Custom POS Systems</h3>
+              <p className="text-muted-foreground">
+                Tailored point-of-sale solutions including hotel systems, school management, and more
+              </p>
+            </div>
           </div>
         </div>
       </main>
